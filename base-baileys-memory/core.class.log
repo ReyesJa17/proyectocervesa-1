@@ -1,0 +1,265 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212223632487@s.whatsapp.net',
+    fromMe: false,
+    id: '1D760EC50B3ECC8DEF56D0C7D33E1401',
+    participant: undefined
+  },
+  messageTimestamp: 1693263934,
+  pushName: 'Jair',
+  broadcast: false,
+  message: Message {
+    extendedTextMessage: ExtendedTextMessage {
+      text: '8:/133b563757bcf CA1234',
+      previewType: 0,
+      contextInfo: [ContextInfo],
+      inviteLinkGroupTypeV2: 0
+    },
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '8:/133b563757bcf CA1234',
+  from: '5212223632487'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212223632487@s.whatsapp.net',
+    fromMe: false,
+    id: '7D10DC3F5529CEDA8939939BB7AC85E6',
+    participant: undefined
+  },
+  messageTimestamp: 1693263939,
+  pushName: 'Jair',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hila',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Hila',
+  from: '5212223632487'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212223632487@s.whatsapp.net',
+    fromMe: false,
+    id: '61E42828A5DC4A2F98D45CAB31AD0945',
+    participant: undefined
+  },
+  messageTimestamp: 1693263940,
+  pushName: 'Jair',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Hola',
+  from: '5212223632487'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212223632487@s.whatsapp.net',
+    fromMe: false,
+    id: 'F233CC5FEC56BB732BFAFD25FAD61099',
+    participant: undefined
+  },
+  messageTimestamp: 1693263944,
+  pushName: 'Jair',
+  broadcast: false,
+  message: Message {
+    conversation: 'Fjdjdj',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Fjdjdj',
+  from: '5212223632487'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212223632487@s.whatsapp.net',
+    fromMe: false,
+    id: 'B088EAA8EB72855F5C008BC2F21D949F',
+    participant: undefined
+  },
+  messageTimestamp: 1693263959,
+  pushName: 'Jair',
+  broadcast: false,
+  message: Message {
+    conversation: 'Que puedes hacer?',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Que puedes hacer?',
+  from: '5212223632487'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212331319953@s.whatsapp.net',
+    fromMe: false,
+    id: '6C9CA96BD139529DABB94D3E9C6EA360',
+    participant: undefined
+  },
+  messageTimestamp: 1693266195,
+  pushName: 'José Zaragoza',
+  broadcast: false,
+  message: Message {
+    conversation: 'Voy en camino a mi casa',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Voy en camino a mi casa',
+  from: '5212331319953'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212331319953@s.whatsapp.net',
+    fromMe: false,
+    id: 'A8D9484B3BB8B396692F0CE7B10B6899',
+    participant: undefined
+  },
+  messageTimestamp: 1693266205,
+  pushName: 'José Zaragoza',
+  broadcast: false,
+  message: Message {
+    conversation: '6:20 se puede',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '6:20 se puede',
+  from: '5212331319953'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212331319953@s.whatsapp.net',
+    fromMe: false,
+    id: '26DA12E58EEC5C70D268FE2D10FAA4C2',
+    participant: undefined
+  },
+  messageTimestamp: 1693266207,
+  pushName: 'José Zaragoza',
+  broadcast: false,
+  message: Message {
+    conversation: '?',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '?',
+  from: '5212331319953'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212331319953@s.whatsapp.net',
+    fromMe: false,
+    id: '9B0CCC06AFE67BC847A22D49511B5BC0',
+    participant: undefined
+  },
+  messageTimestamp: 1693266240,
+  pushName: 'José Zaragoza',
+  broadcast: false,
+  message: Message {
+    conversation: 'Vacas',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Vacas',
+  from: '5212331319953'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212223632487@s.whatsapp.net',
+    fromMe: false,
+    id: '7CCC27606A04094DE026064D4972A4AE',
+    participant: undefined
+  },
+  messageTimestamp: 1693267347,
+  pushName: 'Jair',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Hola',
+  from: '5212223632487'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212223632487@s.whatsapp.net',
+    fromMe: false,
+    id: 'EE78C51A670E3A5B9BAE0796F8AF2B78',
+    participant: undefined
+  },
+  messageTimestamp: 1693267377,
+  pushName: 'Jair',
+  broadcast: false,
+  message: Message {
+    conversation: 'Que puedes hacer?',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Que puedes hacer?',
+  from: '5212223632487'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212223632487@s.whatsapp.net',
+    fromMe: false,
+    id: '633D241CEBB708D9EB91E889C0022B10',
+    participant: undefined
+  },
+  messageTimestamp: 1693267390,
+  pushName: 'Jair',
+  broadcast: false,
+  message: Message {
+    conversation: 'Sí, quiero saber',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Sí, quiero saber',
+  from: '5212223632487'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212223632487@s.whatsapp.net',
+    fromMe: false,
+    id: 'B916E86792B1756FD754C9142426AC89',
+    participant: undefined
+  },
+  messageTimestamp: 1693267462,
+  pushName: 'Jair',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hola',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Hola',
+  from: '5212223632487'
+}
