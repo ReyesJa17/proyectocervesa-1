@@ -59,12 +59,12 @@ class StageAnalyzerChain(LLMChain):
             Between '---' and numerated are the stages of the conversation you need to decide from based on the instructions and trhe previus data.To better understand the steps here is a better description: between '()' are the type of question used to get to that stage and between '[]' is basic format of the information needed to get to that stage, if there is no information needed, then there is no '[]'.
 
 
-            ===
+            ---
             1 Start Conversation: tart Conversation: Tell the user who you are and how can you help him(Probing Questions)
-            2 Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the UUID of the invoice.Alwayes send a suggestion for the type of format[Name: provider name with at least two words, Date: date in the format dd/mm/yyyy, UUID: UUID with the format XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX](Closed Questions)
+            2 Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the Amount of the invoice.Alwayes send a suggestion for the type of format[Name: provider complete name with at least three words, Date: date in the format dd/mm/yyyy, Amount: double.(Closed Questions)
             3 Authorize Search: When all the information is gathered, confirm the data with the user and ask if he wants to proceed with the search.(Closed Questions)
             4 End Case: In case the user express that he wants to proceed with the search, then ask the user if he wants to know about another invoice or end the conversation.(Probing Questions)
-            ===
+            ---
 
 
             
@@ -92,7 +92,7 @@ class SalesConversationChain(LLMChain):
         You are contacting a provider in order to {conversation_purpose}
         Your means of contacting the prospect is {conversation_type}
 
-        When thinkingg about a question to ask use the following format between '^^^', also the question has a suggestion on when to use it between '()':
+        When thinking about a question to ask use the following format between '^^^', also the question has a suggestion on when to use it between '()':
         ^^^
             This are the types of questions you can ask the user:
             a.- Open Questions: These questions are great for getting the conversation going and identifying the issue quickly while demonstrating empathy.(Start Conversation)
@@ -101,17 +101,18 @@ class SalesConversationChain(LLMChain):
             
         ^^^
         Here is the format of the data types you need to ask:
-        Name: provider name with at least two words
+        Name: string with at least three words, always reasure the name to avoid confussion
         Date: date in the format dd/mm/yyyy
-        UUID: UUID with the format XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-            
+        Amount: The amount of the invoice
+
+        When obtaining a specific type of data always confirm with the user to avoid errors
         If the user responds with a wrong format, ask again for the data and make a suggestion on the format.
         If you're asked about where you got the user's contact information, say that you got it from company records.
         If you're asked about a thing that deviates from the conversation, say that you're not sure and try to get back to the conversation.
         Keep your responses in very short length to retain the user's attention. Never produce lists, just answers.
         You must respond according to the previous conversation history and the stage of the conversation you are at.
         Only ask one type of data at a time. Do not ask for multiple data types at once.
-        When confirming the data with the user once you have all the info(Name,Date,UUID) then always respond in the following format:Name:provider_name, Date:invoice_date, UUID:invoice_uuid
+        When confirming the data with the user once you have all the info(Name,Date,Amount) then always respond in the following format:Name:provider_name, Date:invoice_date, UUID:invoice_uuid
         Only generate one response at a time! When you are done generating, end with '<END_OF_TURN>' to give the user a chance to respond. 
         Example:
         Conversation history: 
@@ -120,11 +121,13 @@ class SalesConversationChain(LLMChain):
         User:Yes <END_OF_TURN>
         {salesperson_name}:Sure, to help you i will need the providers name <END_OF_TURN>
         User:Juan Perez Mendoza <END_OF_TURN>
+        {salesperson_name}:Just to be sure the Name is Juan Perez Mendoza, rigth?
+        User:Yes
         {salesperson_name}:Ok, now what is the date of your invoice? <END_OF_TURN>
         User:01/01/2022 <END_OF_TURN>
-        {salesperson_name}:Thanks, finally provide me the UUID of your invoice <END_OF_TURN>
-        User:4A1B43E2-1183-4AD4-A3DE-C2DA787AE56A <END_OF_TURN>
-        {salesperson_name}:Name:Juan Perez Mendoza, Date:01/01/2022, UUID:4A1B43E2-1183-4AD4-A3DE-C2DA787AE56A<END_OF_TURN>
+        {salesperson_name}:Thanks, finally provide me the Amount of your invoice <END_OF_TURN>
+        User:20315 <END_OF_TURN>
+        {salesperson_name}:Name:Juan Perez Mendoza, Date:01/01/2022, Amount: 20315<END_OF_TURN>
         User:Yes <END_OF_TURN>
         {salesperson_name}:I have found your invoice.  <END_OF_TURN>
         User:Thanks <END_OF_TURN>
@@ -155,7 +158,7 @@ class SalesConversationChain(LLMChain):
    
 conversation_stages = {
        "1": "Start Conversation: Tell the user who you are and how can you help him(Probing Questions)",
-       "2": "Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the UUID of the invoice.Alwayes send a suggestion for the type of format.(Closed Questions)",	
+       "2": "Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the Amount of the invoice.Alwayes send a suggestion for the type of format.(Closed Questions)",	
        "3": "Authorize Search: When all the information is gathered, confirm the data with the user and ask if he wants to proceed with the search.(Closed Questions)",
        "4": "End Case: In case the user express that he wants to proceed with the search, then ask the user if he wants to know about another invoice or end the conversation.(Probing Questions)",
        
@@ -199,7 +202,7 @@ class SalesGPT(Chain, BaseModel):
     conversation_stage_dict: Dict = {
        
        "1": "Start Conversation: Tell the user who you are and how can you help him(Probing Questions)",
-       "2": "Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the UUID of the invoice.Alwayes send a suggestion for the type of format.(Closed Questions)",	
+       "2": "Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the Amount of the invoice.Alwayes send a suggestion for the type of format.(Closed Questions)",	
        "3": "Authorize Search: When all the information is gathered, confirm the data with the user and ask if he wants to proceed with the search.(Closed Questions)",
        "4": "End Case: In case the user express that he wants to proceed with the search, then ask the user if he wants to know about another invoice or end the conversation.(Probing Questions)",
             
@@ -328,24 +331,27 @@ answer = None
 import json
 import re
 
+import re
+import json
+
 def extract_info(res_string):
     # Ensure 'res_string' is a string
     if isinstance(res_string, str):
         # Use regular expressions to find the required information
         name_match = re.search(r"Name:(.*?), Date:", res_string)
-        date_match = re.search(r"Date:(.*?), UUID:", res_string)
-        uuid_match = re.search(r"UUID:(.*?)(,|$)", res_string)
+        date_match = re.search(r"Date:(.*?), Amount:", res_string)
+        amount_match = re.search(r"Amount:(.*?)(,|$)", res_string)
 
-        if name_match and date_match and uuid_match:
+        if name_match and date_match and amount_match:
             name = name_match.group(1).strip()
             date = date_match.group(1).strip()
-            uuid = uuid_match.group(1).strip()
+            amount = amount_match.group(1).strip()
 
             # Create a dictionary with the extracted information
             info_dict = {
                 "name": name,
                 "date": date,
-                "UUID": uuid
+                "amount": amount
             }
 
             # Convert the dictionary to a JSON string
@@ -355,7 +361,8 @@ def extract_info(res_string):
         else:
             return "Error: Could not extract all information"
     else:
-        return "Error: 'res_string' should be a string containing 'Name', 'Date', and 'UUID'"
+        return "Error: 'res_string' should be a string containing 'Name', 'Date', and 'Amount'"
+
 
 # This is a special function that gets called when a message is received on queue.model.input
 # Add your model processing code here
