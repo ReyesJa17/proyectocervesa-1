@@ -12,8 +12,8 @@ const { AsyncQueue } = require('./AsyncQueue');
 const messageQueue = new AsyncQueue();
 let dirPath = __dirname;
 
-const user = 'conejos';
-const password = 'conejos';
+const user = 'guest';
+const password = 'guest';
 const host = 'localhost';
 
 const Sending_message = require('./apii.js');

@@ -1,57 +1,112 @@
 [handleMsg]:  {
   key: {
-    remoteJid: '5212223632487@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: '1D760EC50B3ECC8DEF56D0C7D33E1401',
+    id: 'DA15673B0DDF1F4027240475EB0A603E',
     participant: undefined
   },
-  messageTimestamp: 1693263934,
-  pushName: 'Jair',
+  messageTimestamp: 1695701731,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    extendedTextMessage: ExtendedTextMessage {
-      text: '8:/133b563757bcf CA1234',
-      previewType: 0,
-      contextInfo: [ContextInfo],
-      inviteLinkGroupTypeV2: 0
-    },
+    conversation: 'K onda homs',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: '8:/133b563757bcf CA1234',
-  from: '5212223632487'
+  body: 'K onda homs',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212223632487@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: '7D10DC3F5529CEDA8939939BB7AC85E6',
+    id: '8DC89784AC2AAB36995C235B111DA5B3',
     participant: undefined
   },
-  messageTimestamp: 1693263939,
-  pushName: 'Jair',
+  messageTimestamp: 1695701758,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: 'Hila',
+    conversation: 'Rfdff',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Hila',
-  from: '5212223632487'
+  body: 'Rfdff',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212223632487@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: '61E42828A5DC4A2F98D45CAB31AD0945',
+    id: '44E11971E3B9B698AD681BB08D6C53CB',
     participant: undefined
   },
-  messageTimestamp: 1693263940,
-  pushName: 'Jair',
+  messageTimestamp: 1695701763,
+  pushName: 'Max de la Hidalga',
+  broadcast: false,
+  message: Message {
+    conversation: 'Dequen ie',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Dequen ie',
+  from: '5212228227500'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212228227500@s.whatsapp.net',
+    fromMe: false,
+    id: 'BE85CEB23969C3608E3662AA07D1EFCE',
+    participant: undefined
+  },
+  messageTimestamp: 1695701882,
+  pushName: 'Max de la Hidalga',
+  broadcast: false,
+  message: Message {
+    conversation: 'Bro',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Bro',
+  from: '5212228227500'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212228227500@s.whatsapp.net',
+    fromMe: false,
+    id: '62301CCC8E503F5A3BFEF91BF9D18A2A',
+    participant: undefined
+  },
+  messageTimestamp: 1695701890,
+  pushName: 'Max de la Hidalga',
+  broadcast: false,
+  message: Message {
+    conversation: 'Hhy',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Hhy',
+  from: '5212228227500'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212228227500@s.whatsapp.net',
+    fromMe: false,
+    id: 'C9765AFE508AAB9D5C453C0F1810E9B9',
+    participant: undefined
+  },
+  messageTimestamp: 1695701917,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
     conversation: 'Hola',
@@ -61,205 +116,265 @@
     }
   },
   body: 'Hola',
-  from: '5212223632487'
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212223632487@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: 'F233CC5FEC56BB732BFAFD25FAD61099',
+    id: '62F57D0A4C5BE760062433FE77D4F791',
     participant: undefined
   },
-  messageTimestamp: 1693263944,
-  pushName: 'Jair',
+  messageTimestamp: 1695701924,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: 'Fjdjdj',
+    conversation: 'Que sabes hacer',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Fjdjdj',
-  from: '5212223632487'
+  body: 'Que sabes hacer',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212223632487@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: 'B088EAA8EB72855F5C008BC2F21D949F',
+    id: 'A9882652F3A79466BD1B073294550D9A',
     participant: undefined
   },
-  messageTimestamp: 1693263959,
-  pushName: 'Jair',
+  messageTimestamp: 1695701950,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: 'Que puedes hacer?',
+    conversation: 'Talvez',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Que puedes hacer?',
-  from: '5212223632487'
+  body: 'Talvez',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212331319953@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: '6C9CA96BD139529DABB94D3E9C6EA360',
+    id: '1E92F4736EDBFEE6EE573F4DAF63E961',
     participant: undefined
   },
-  messageTimestamp: 1693266195,
-  pushName: 'José Zaragoza',
+  messageTimestamp: 1695701969,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: 'Voy en camino a mi casa',
+    conversation: 'Mejor vete a la mierda',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Voy en camino a mi casa',
-  from: '5212331319953'
+  body: 'Mejor vete a la mierda',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212331319953@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: 'A8D9484B3BB8B396692F0CE7B10B6899',
+    id: 'C0AF3E3358F4EC62780C27701D98DEFA',
     participant: undefined
   },
-  messageTimestamp: 1693266205,
-  pushName: 'José Zaragoza',
+  messageTimestamp: 1695702006,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: '6:20 se puede',
+    conversation: 'No me jodas cabron',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: '6:20 se puede',
-  from: '5212331319953'
+  body: 'No me jodas cabron',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212331319953@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: '26DA12E58EEC5C70D268FE2D10FAA4C2',
+    id: 'FE54354B76619AF48B93256A2DB11DFA',
     participant: undefined
   },
-  messageTimestamp: 1693266207,
-  pushName: 'José Zaragoza',
+  messageTimestamp: 1695702024,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: '?',
+    conversation: 'Como te llamas',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: '?',
-  from: '5212331319953'
+  body: 'Como te llamas',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212331319953@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: '9B0CCC06AFE67BC847A22D49511B5BC0',
+    id: 'BBEB7911D71E0EE632ACB2257C8B230F',
     participant: undefined
   },
-  messageTimestamp: 1693266240,
-  pushName: 'José Zaragoza',
+  messageTimestamp: 1695702039,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: 'Vacas',
+    conversation: 'Cuantos años tienes',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Vacas',
-  from: '5212331319953'
+  body: 'Cuantos años tienes',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212223632487@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: '7CCC27606A04094DE026064D4972A4AE',
+    id: '713F290A1398009CACE564D8A3903413',
     participant: undefined
   },
-  messageTimestamp: 1693267347,
-  pushName: 'Jair',
+  messageTimestamp: 1695702053,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: 'Hola',
+    conversation: 'Una factura',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Hola',
-  from: '5212223632487'
+  body: 'Una factura',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212223632487@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: 'EE78C51A670E3A5B9BAE0796F8AF2B78',
+    id: 'F35F93526DDE4E2B8D23AC04A0EBAF36',
     participant: undefined
   },
-  messageTimestamp: 1693267377,
-  pushName: 'Jair',
+  messageTimestamp: 1695702079,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: 'Que puedes hacer?',
+    conversation: 'Dime k necesitas saber y para que',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Que puedes hacer?',
-  from: '5212223632487'
+  body: 'Dime k necesitas saber y para que',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212223632487@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: '633D241CEBB708D9EB91E889C0022B10',
+    id: '0BF185CF63BDBB9D92F8F42B8776CBBE',
     participant: undefined
   },
-  messageTimestamp: 1693267390,
-  pushName: 'Jair',
+  messageTimestamp: 1695702200,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: 'Sí, quiero saber',
+    conversation: 'Mi nombre es Maximiliano Domingo',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Sí, quiero saber',
-  from: '5212223632487'
+  body: 'Mi nombre es Maximiliano Domingo',
+  from: '5212228227500'
 }
 [handleMsg]:  {
   key: {
-    remoteJid: '5212223632487@s.whatsapp.net',
+    remoteJid: '5212228227500@s.whatsapp.net',
     fromMe: false,
-    id: 'B916E86792B1756FD754C9142426AC89',
+    id: '2E9D2B597973E8AF75C5164C75ABDE0B',
     participant: undefined
   },
-  messageTimestamp: 1693267462,
-  pushName: 'Jair',
+  messageTimestamp: 1695702217,
+  pushName: 'Max de la Hidalga',
   broadcast: false,
   message: Message {
-    conversation: 'Hola',
+    conversation: 'Cual es mi nombre?',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Hola',
-  from: '5212223632487'
+  body: 'Cual es mi nombre?',
+  from: '5212228227500'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212228227500@s.whatsapp.net',
+    fromMe: false,
+    id: '39DC60E6ED562E3AB6DC242B402C435B',
+    participant: undefined
+  },
+  messageTimestamp: 1695702230,
+  pushName: 'Max de la Hidalga',
+  broadcast: false,
+  message: Message {
+    conversation: 'No el tuyo sino el mio',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'No el tuyo sino el mio',
+  from: '5212228227500'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212228227500@s.whatsapp.net',
+    fromMe: false,
+    id: '69DB704A33247D3795637FBC014DC26E',
+    participant: undefined
+  },
+  messageTimestamp: 1695702239,
+  pushName: 'Max de la Hidalga',
+  broadcast: false,
+  message: Message {
+    conversation: 'Maximiliano',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Maximiliano',
+  from: '5212228227500'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5212228227500@s.whatsapp.net',
+    fromMe: false,
+    id: '0D58A5221970937AA2F9619B04757DBB',
+    participant: undefined
+  },
+  messageTimestamp: 1695702254,
+  pushName: 'Max de la Hidalga',
+  broadcast: false,
+  message: Message {
+    conversation: 'Cual es mi nombre',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Cual es mi nombre',
+  from: '5212228227500'
 }

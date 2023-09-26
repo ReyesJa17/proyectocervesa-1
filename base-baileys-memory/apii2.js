@@ -1,8 +1,8 @@
 const amqp = require('amqplib/callback_api');
 const uuid = require('uuid');
 
-const user = 'conejos';
-const password = 'conejos';
+const user = 'guest';
+const password = 'guest';
 const host = 'localhost';
 
 let channel;
