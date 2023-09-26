@@ -17,7 +17,7 @@ async function delay(ms) {
 
 const flowChatLoop = addKeyword(['hola'])
     .addAnswer(
-        'WEY, NETA TIENES QUE CAMBIAR ESA ACTITUD',
+        '¡Hola! ¿En qué puedo ayudarte hoy?',
         { capture: true },
         async (ctx, { fallBack, provider, flowDynamic }) => {
             if (!ctx.body.toLowerCase().includes('ofertas')) {
