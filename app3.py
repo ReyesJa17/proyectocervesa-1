@@ -15,7 +15,7 @@ import json
 # you need to put it in your .env file
 # OPENAI_API_KEY='sk-xxxx'
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 
 from typing import Dict, List, Any
 
@@ -392,7 +392,7 @@ def callback_on_message_received(ch, method, properties, body):
 
         print("Mensaje enviado correctamente a la cola", rmq_completed_queue)
 
-credencial = pika.PlainCredentials('conejos', 'conejos')
+credencial = pika.PlainCredentials('guest', 'guest')
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost', credentials=credencial))
 channel = connection.channel()
 
