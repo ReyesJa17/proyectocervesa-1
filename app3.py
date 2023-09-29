@@ -1,12 +1,3 @@
-import pika
-import json
-import random
-
-
-#######################
-# Initialize your model here
-#######################
-
 # currently there's nothing to initialize, but this is where you'd instantiate your model, load weights etc
 import os
 import re
@@ -15,7 +6,7 @@ import json
 # you need to put it in your .env file
 # OPENAI_API_KEY='sk-xxxx'
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
 
 from typing import Dict, List, Any
 
@@ -309,14 +300,7 @@ class SalesGPT(Chain, BaseModel):
             verbose=verbose,
             **kwargs,
         )
-    
-        
-
-
-    
-        
-        
-
+           
 sales_agent = SalesGPT.from_llm(llm, verbose=False)
 # init sales agent
 sales_agent.seed_agent()
@@ -330,9 +314,6 @@ cicle = True
 answer = None
 import json
 import re
-
-import re
-import json
 
 def extract_info(res_string):
     # Ensure 'res_string' is a string
@@ -368,16 +349,30 @@ def extract_info(res_string):
 # Add your model processing code here
 # #######################
 import pika
+agents_dict = {}
 
 def callback_on_message_received(ch, method, properties, body):
     print("Mensaje de WhatsApp %r" % body)
 
     user_message = body.decode()
-    aux = 0
+    correlation_id = properties.correlation_id  # Correlation ID del mensaje entrante
+
+    # Si el correlation_id no está en agents_dict, crea una nueva instancia de SalesGPT
+    if correlation_id not in agents_dict:
+        new_llm = ChatOpenAI(temperature=0)
+        agents_dict[correlation_id] = SalesGPT.from_llm(new_llm, verbose=False)
+        agents_dict[correlation_id].seed_agent()
+        print(f"Creando nueva instancia para correlation_id: {correlation_id}")
+    else:
+        print(f"Usando instancia existente para correlation_id: {correlation_id}")
+
+    # Recupera la instancia de SalesGPT asociada con el correlation_id
+    sales_agent = agents_dict[correlation_id]
 
     if user_message:
         sales_agent.human_step(user_message)
-        aux = sales_agent.determine_conversation_stage(aux)
+        aux = 0
+        sales_agent.determine_conversation_stage(aux)
         print("Etapa de la conversación:", aux)
 
         res = sales_agent._call(user_message, aux)
@@ -386,18 +381,22 @@ def callback_on_message_received(ch, method, properties, body):
         answer = json.dumps(res) if isinstance(res, dict) else res
         print("Respuesta a enviar:", answer)
 
-        rmq_completed_queue = 'queue.model.output'
-        print("Publicando mensaje completado a {}".format(rmq_completed_queue))
-        
         # Captura el 'reply_to' del mensaje entrante
         reply_to_queue = properties.reply_to if properties.reply_to else 'queue.model.output'
         print("Publicando mensaje completado a {}".format(reply_to_queue))
 
+        # Publica la respuesta al queue especificado con el mismo correlation_id
+        channel.basic_publish(
+            exchange='',
+            routing_key=reply_to_queue,
+            body=answer,
+            properties=pika.BasicProperties(correlation_id=correlation_id)
+        )
 
-         # Usa el mismo Correlation ID del mensaje entrante para el mensaje saliente
-        channel.basic_publish(exchange='', routing_key=reply_to_queue, body=answer, properties=pika.BasicProperties(correlation_id=properties.correlation_id))
-
-        print("Mensaje enviado correctamente a la cola", rmq_completed_queue)
+        print("Mensaje enviado correctamente a la cola", reply_to_queue)
+        
+    # Imprimir el diccionario de agentes
+    print("Diccionario de agentes:", agents_dict.keys())
 
 credencial = pika.PlainCredentials('guest', 'guest')
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost', credentials=credencial))
