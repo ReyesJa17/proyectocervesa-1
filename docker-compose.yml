@@ -1,0 +1,20 @@
+
+
+version: '3'
+services:
+  node-app-whats:
+    image: appcerveceria-node-app-whats:latest  # Usa la imagen que ya construiste
+    command: ["node", "whats2.js"]
+
+  node-app-api:
+    image: appcerveceria-node-app-api:latest  # Usa la imagen que ya construiste
+    command: ["node", "apii2.js"]
+
+  python-app:
+    image: appcerveceria-python-app:latest  # Usa la imagen que ya construiste
+
+  rabbitmq:
+    image: "rabbitmq:management"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
