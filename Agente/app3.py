@@ -5,7 +5,7 @@ import re
 import json
 from dotenv import load_dotenv
 load_dotenv()
-OPENAI_API_KEY= "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"
+OPENAI_API_KEY= "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"
 from typing import Dict, List, Any
 from langchain import LLMChain, PromptTemplate
 from langchain.llms import BaseLLM
@@ -45,13 +45,13 @@ class StageAnalyzerChain(LLMChain):
             {conversation_history}
             ===
 
-            Between '---' and numerated are the stages of the conversation you need to decide from based on the instructions and trhe previus data.To better understand the steps here is a better description: between '()' are the type of question used to get to that stage and between '[]' is basic format of the information needed to get to that stage, if there is no information needed, then there is no '[]'.
+            Between '---' and numerated are the stages of the conversation you need to decide from based on the instructions and trhe previus data.To better understand the steps here is a better description: between '()' are the type of question used to get to that stage.
 
 
             ---
             1 Start Conversation: tart Conversation: Tell the user who you are and how can you help him(Proving Questions)
-                2 Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the Amount of the invoice.Alwayes send a suggestion for the type of format[Name: provider complete name with at least three words, Date: date in the format dd.mm.yyyy, Amount: amount in the format 28048.23](Closed Questions)
-                3 Guide User: In case the user suggest anything out of theme with the main case then orient to go back to the case(Closed Questions)
+            2 Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the Amount of the invoice.Alwayes send a suggestion for the type of format [Nombre: provider complete name with at least three words, Fecha: date in the format dd.mm.yyyy, Monto: amount in the format 28048.23](Closed Questions)
+            3 Guide User: In case the user suggest anything out of theme with the main case then orient to go back to the case(Closed Questions)
            
             ---
 
@@ -92,7 +92,7 @@ class SalesConversationChain(LLMChain):
         Here is the format of the data types you need to ask:
         Name: string with at least three words, always reasure the name to avoid confussion
         Date: date in the format dd.mm.yyyy
-        Amount: The amount of the invoice
+        Amount: The amount of the invoice (. for decimals)
 
         When obtaining a specific type of data always confirm with the user to avoid errors
         If the user responds with a wrong format, ask again for the data and make a suggestion on the format.
@@ -101,26 +101,25 @@ class SalesConversationChain(LLMChain):
         Keep your responses in very short length to retain the user's attention. Never produce lists, just answers.
         You must respond according to the previous conversation history and the stage of the conversation you are at.
         Only ask one type of data at a time. Do not ask for multiple data types at once.
-        When confirming the data with the user, once you have all the information (Name, Date, Amount), it is very important that you always respond in the following json format: Name: supplier_name, Date: invoice_date, amount: total_amount, and only with that data without adding absolutely anything else, I emphasize the only thing you have to send is that data in the json format.
+        When confirming the data with the user, once you have all the information (Name, Date, Amount), it is very important that you always respond in the following json format: [Nombre: supplier_name, Fecha: invoice_date, Monto: total_amount] and only with that data without adding absolutely anything else, I emphasize the only thing you have to send is that data in the json format.
         Only generate one response at a time! When you are done generating, end with '<END_OF_TURN>' to give the user a chance to respond. 
         Example:
         Conversation history: 
         User:What can you do? <END_OF_TURN>
         {salesperson_name}:I can guide you through the process of checking the status of an invoice.Do you want to know about an invoice? <END_OF_TURN>
-        User:Yes <END_OF_TURN>
+        User:Yeah i want to know about an invoice <END_OF_TURN>
         {salesperson_name}:Sure, to help you i will need the providers name <END_OF_TURN>
         User:Juan Perez Mendoza <END_OF_TURN>
         {salesperson_name}:Just to be sure the Name is Juan Perez Mendoza, rigth?
-        User:Yes
+        User:Thars correct <END_OF_TURN>
         {salesperson_name}:Ok, now what is the date of your invoice? <END_OF_TURN>
-        User:01/01/2022 <END_OF_TURN>
+        User:01.01.2022 <END_OF_TURN>
         {salesperson_name}:Thanks, finally provide me the Amount of your invoice <END_OF_TURN>
-        User:20315 <END_OF_TURN>
-        {salesperson_name}:Name:Juan Perez Mendoza, Date:01/01/2022, Amount: 20315<END_OF_TURN>
-        User:Yes <END_OF_TURN>
-        {salesperson_name}:I have found your invoice.  <END_OF_TURN>
+        User:20315.14 <END_OF_TURN>
+        {salesperson_name}:Name:Juan Perez Mendoza, Date:01/01/2022, Amount: 20315.14<END_OF_TURN>
+        User:Yeah, thats correct <END_OF_TURN>
+        {salesperson_name}: [Nombre: Juan Perez Mendoza, Fecha: 01.01.2022, Monto: 20315.14]  <END_OF_TURN>
         User:Thanks <END_OF_TURN>
-        {salesperson_name}:You are welcome. <END_OF_TURN>
         End of example.
 
         Current conversation stage: 
@@ -147,7 +146,7 @@ class SalesConversationChain(LLMChain):
    
 conversation_stages = {
        "1": "Start Conversation: Tell the user who you are and how can you help him(Proving Questions)",
-       "2": "Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the Amount of the invoice.Alwayes send a suggestion for the type of format.(Closed Questions)",	
+       "2": "Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the Amount of the invoice.Alwayes send a suggestion for the type of format [Nombre: provider complete name with at least three words, Fecha: date in the format dd.mm.yyyy, Monto: amount in the format 28048.23](Closed Questions)",	
        "3": "Guide User: In case the user suggest anything out of theme with the main case then orient to go back to the case(Closed Questions)"
        
        
@@ -191,7 +190,7 @@ class SalesGPT(Chain, BaseModel):
     conversation_stage_dict: Dict = {
        
        "1": "Start Conversation: Tell the user who you are and how can you help him(Testing Questions)",
-       "2": "Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the Amount of the invoice.Alwayes send a suggestion for the type of format.(Closed Questions)",	
+       "2": "Gather Case Information: Ask the user for the name of the provider, the date of the invoice and the Amount of the invoice.Alwayes send a suggestion for the type of format [Nombre: provider complete name with at least three words, Fecha: date in the format dd.mm.yyyy, Monto: amount in the format 28048.23](Closed Questions)",	
        "3": "Guide User: In case the user suggest anything out of theme with the main case then orient to go back to the case(Closed Questions)",
        
             
@@ -322,10 +321,13 @@ def extract_info(res_string):
     # Ensure 'res_string' is a string
     if isinstance(res_string, str):
         # Use regular expressions to find the required information
-        name_match = re.search(r'"Name": "(.*?)", "Date":', res_string)
-        date_match = re.search(r'"Date": "(.*?)", "Amount":', res_string)
-        amount_match = re.search(r'"Amount": ("(.*?)"|(\d+(\.\d+)?))', res_string)
-
+        name_match = re.search(r'"Nombre": "(.*?)", "Date":', res_string)
+        date_match = re.search(r'"Fecha": "(.*?)", "Amount":', res_string)
+        amount_match = re.search(r'"Monto": ("(.*?)"|(\d+(\.\d+)?))', res_string)
+        print("los datos son:")
+        print (name_match)
+        print (date_match)
+        print (amount_match)
         if name_match and date_match and amount_match:
             name = name_match.group(1).strip()
             date = date_match.group(1).strip()
@@ -457,3 +459,4 @@ channel.basic_consume(queue=rmq_source_queue, on_message_callback=callback_on_me
 
 # Comenzar a escuchar los mensajes
 channel.start_consuming()
+
